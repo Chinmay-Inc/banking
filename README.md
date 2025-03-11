@@ -1,4 +1,4 @@
-# NKN Bank - Modern Banking Website
+# CRI Bank - Modern Banking Website
 
 A responsive and modern banking website built with HTML, CSS, and JavaScript. This project simulates a banking application where users can manage their accounts, make deposits and withdrawals, apply for loans, and view their transaction history.
 
