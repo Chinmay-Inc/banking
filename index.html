@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NKN Bank - Your Trusted Banking Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>NKN Bank</h1>
+            </div>
+            <div class="theme-toggle">
+                <input type="checkbox" id="dark-mode-toggle">
+                <label for="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </label>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active"><a href="#dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#deposit"><i class="fas fa-money-bill-wave"></i> Deposit</a></li>
+                    <li><a href="#withdraw"><i class="fas fa-hand-holding-usd"></i> Withdraw</a></li>
+                    <li><a href="#loan"><i class="fas fa-landmark"></i> Apply for Loan</a></li>
+                    <li><a href="#history"><i class="fas fa-history"></i> Transaction History</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-details">
+                    <h3>John Doe</h3>
+                    <p>Account #: 1234567890</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="header">
+                <h2>Welcome back, John!</h2>
+                <div class="date">
+                    <p id="current-date">Monday, March 11, 2025</p>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <div class="balance-card">
+                    <div class="balance-info">
+                        <h3>Current Balance</h3>
+                        <h1 id="account-balance">$5,000.00</h1>
+                    </div>
+                    <div class="balance-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <div class="action-card" id="quick-deposit">
+                        <i class="fas fa-arrow-down"></i>
+                        <h3>Deposit</h3>
+                    </div>
+                    <div class="action-card" id="quick-withdraw">
+                        <i class="fas fa-arrow-up"></i>
+                        <h3>Withdraw</h3>
+                    </div>
+                    <div class="action-card" id="quick-loan">
+                        <i class="fas fa-landmark"></i>
+                        <h3>Loan</h3>
+                    </div>
+                </div>
+
+                <div class="recent-transactions">
+                    <h3>Recent Transactions</h3>
+                    <div class="transaction-list" id="recent-transactions-list">
+                        <!-- Transactions will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Deposit Section -->
+            <section id="deposit" class="content-section">
+                <h2>Deposit Money</h2>
+                <div class="form-container">
+                    <form id="deposit-form">
+                        <div class="form-group">
+                            <label for="deposit-amount">Amount to Deposit ($)</label>
+                            <input type="number" id="deposit-amount" min="1" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="deposit-description">Description (Optional)</label>
+                            <input type="text" id="deposit-description" placeholder="e.g., Salary, Gift">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Deposit Money</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Withdraw Section -->
+            <section id="withdraw" class="content-section">
+                <h2>Withdraw Money</h2>
+                <div class="form-container">
+                    <form id="withdraw-form">
+                        <div class="form-group">
+                            <label for="withdraw-amount">Amount to Withdraw ($)</label>
+                            <input type="number" id="withdraw-amount" min="1" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="withdraw-description">Description (Optional)</label>
+                            <input type="text" id="withdraw-description" placeholder="e.g., Rent, Groceries">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Withdraw Money</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Loan Application Section -->
+            <section id="loan" class="content-section">
+                <h2>Apply for a Loan</h2>
+                <div class="form-container">
+                    <form id="loan-form">
+                        <div class="form-group">
+                            <label for="loan-amount">Loan Amount ($)</label>
+                            <input type="number" id="loan-amount" min="1000" step="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loan-purpose">Purpose of Loan</label>
+                            <select id="loan-purpose" required>
+                                <option value="">Select a purpose</option>
+                                <option value="Home">Home Purchase</option>
+                                <option value="Car">Vehicle Purchase</option>
+                                <option value="Education">Education</option>
+                                <option value="Business">Business</option>
+                                <option value="Personal">Personal</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="loan-duration">Loan Duration (Months)</label>
+                            <input type="number" id="loan-duration" min="6" max="60" value="12" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loan-description">Additional Details</label>
+                            <textarea id="loan-description" rows="3" placeholder="Provide any additional information about your loan request"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Application</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Transaction History Section -->
+            <section id="history" class="content-section">
+                <h2>Transaction History</h2>
+                <div class="filter-controls">
+                    <div class="form-group">
+                        <label for="transaction-type">Filter by Type</label>
+                        <select id="transaction-type">
+                            <option value="all">All Transactions</option>
+                            <option value="deposit">Deposits</option>
+                            <option value="withdrawal">Withdrawals</option>
+                            <option value="loan">Loan Applications</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="transaction-history">
+                    <table id="transaction-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th>Amount</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transaction-history-list">
+                            <!-- Transaction history will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <!-- Modal for confirmations -->
+    <div class="modal" id="confirmation-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Confirmation</h2>
+            <p id="modal-message">Are you sure you want to proceed?</p>
+            <div class="modal-actions">
+                <button id="modal-cancel" class="btn btn-secondary">Cancel</button>
+                <button id="modal-confirm" class="btn btn-primary">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html> 
